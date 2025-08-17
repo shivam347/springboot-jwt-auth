@@ -22,3 +22,36 @@ This project demonstrates JWT-based authentication in Spring Boot for microservi
 
 ![alt text](<register jwt.png>)
 
+
+## Login a User
+- POST /auth/login
+- Content-Type: application/json
+
+- Body:
+ {
+  "username": "your_username",
+  "password": "your_password"
+ }
+
+![alt text](<Screenshot 2025-08-17 201223.png>)
+
+## Access Protected Endpoints
+
+- GET /auth/hello
+- Headers:
+- Authorization: Bearer <JWT_TOKEN>
+
+![alt text](<Screenshot 2025-08-17 201714.png>)
+
+
+# Security
+- Passwords are hashed using BCryptPassword Encoder in Spring Security
+- Jwt tokens are generated and validated for every request
+- Stateless Authentication ensures scalability in microservices
+
+# Notes
+- H2 database is used for simplicity but can be replaced with other relational database
+- This project is intended for learning purpose and can be extended with roles and permissions
+
+# Author
+- Shivam Yadav
